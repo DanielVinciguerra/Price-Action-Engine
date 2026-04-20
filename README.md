@@ -90,39 +90,74 @@ O motor possui uma biblioteca modular de indicadores agrupados por categoria:
 
 ## 🕯️ Identificação de Padrões de Candlestick
 
-Suporte para reconhecimento automatizado de mais de 50 padrões fundamentais. Você pode acessar qualquer padrão através da interface `PriceAction(df).candle_patterns['NOME_DO_PADRAO']`.
+Suporte para reconhecimento automatizado de mais de 50 padrões fundamentais. Utilize através da interface: `PriceAction(df).candle_patterns['KEY']`.
 
-### 📋 Lista de Chaves Disponíveis
+### 🟢 Padrões Altistas (Bullish)
 
-| Categoria | Chaves Técnicas (String Key) |
-| :--- | :--- |
-| **Altistas (Bullish)** | `MORNINGSTAR`, `MORNINGDOJISTAR`, `HAMMER`, `INVERTEDHAMMER`, `PIERCING`, `THREEWHITESOLDIERS`, `THREEINSIDE`, `THREEOUTSIDE`, `ABANDONEDBABY`, `UNIQUETHREERIVER`, `LADDERBOTTOM`, `MATCHINGLOW`, `MATHOLD`, `RISEFALL3METHODS`, `SEPARATINGLINES`, `TASUKIGAP`, `BELTHOLD`, `HOMINGPIGEON`, `KICKING` |
-| **Baixistas (Bearish)** | `SHOOTINGSTAR`, `HANGINGMAN`, `EVENINGSTAR`, `EVENINGDOJISTAR`, `DARKCLOUDCOVER`, `THREEBLACKCROWS`, `TWOCROWS`, `UPSIDEGAPTWOCROWS`, `ADVANCEBLOCK`, `IDENTICALTHREECROWS`, `GRAVESTONEDOJI`, `ONNECK`, `INNECK`, `THREELINESTRIKE`, `UPSIDEDOWNSIDEGAPTHREEMETHODS`, `THRUSTING` |
-| **Indecisão/Outros** | `DOJI`, `LONGLEGGEDDOJI`, `RICKSHAWMAN`, `SPINNINGTOP`, `HIGHWAVE`, `MARUBOZU`, `CLOSINGMARUBOZU`, `LONGLINE`, `SHORTLINE`, `HIKKAKE`, `HIKKAKEMOD`, `KICKINGBYLENGTH`, `STICKSANDWICH`, `COUNTERATTACK`, `BREAKAWAY`, `TAKURI`, `TRISTAR` |
+| Chave (Key) | Nome do Padrão | Explicação Breve |
+| :--- | :--- | :--- |
+| `MORNINGSTAR` | Morning Star | Reversão de alta em três candles no fundo de uma tendência. |
+| `MORNINGDOJISTAR` | Morning Doji Star | Variante do Morning Star onde o candle central é um Doji. |
+| `HAMMER` | Martelo | Reversão de alta; corpo pequeno no topo e sombra inferior longa. |
+| `INVERTEDHAMMER` | Martelo Invertido | Reversão de alta; corpo pequeno no fundo e sombra superior longa. |
+| `PIERCING` | Piercing Pattern | Candle de alta que abre abaixo da mínima e fecha acima do meio do candle anterior. |
+| `THREEWHITESOLDIERS` | Três Soldados de Brancos | Três candles longos de alta em sequência, indicando reversão forte. |
+| `THREEINSIDE` | Three Inside Up | Harami de alta seguido por um candle de rompimento de confirmação. |
+| `THREEOUTSIDE` | Three Outside Up | Engolfo de alta seguido por um terceiro candle confirmando a tendência. |
+| `ABANDONEDBABY` | Abandoned Baby | Padrão raro de reversão com um Doji isolado por gaps de ambos os lados. |
+| `UNIQUETHREERIVER` | Unique 3 River | Padrão de reversão de alta com características específicas de corpo e sombra. |
+| `LADDERBOTTOM` | Ladder Bottom | Reversão de alta rara que indica exaustão extrema do movimento vendedor. |
+| `MATCHINGLOW` | Matching Low | Dois candles com fechos idênticos em uma mínima, indicando suporte forte. |
+| `MATHOLD` | Mat Hold | Padrão de continuidade de alta extremamente confiável. |
+| `RISEFALL3METHODS`| Rising/Falling Methods | Padrão de 5 candles indicando continuidade da tendência vigente. |
+| `SEPARATINGLINES` | Separating Lines | Candles de cores opostas que compartilham o mesmo preço de abertura. |
+| `TASUKIGAP` | Tasuki Gap | Continuidade; gap na tendência seguido por um candle que o fecha parcialmente. |
+| `BELTHOLD` | Belt-hold | Candle único de força que pode indicar reversão ou continuidade. |
+| `HOMINGPIGEON` | Homing Pigeon | Reversão; dois candles de baixa, onde o segundo está contido no primeiro. |
+| `KICKING` | Kicking | Reversão poderosa; dois Marubozus com um gap entre eles. |
+| `TAKURI` | Takuri | Doji libélula com sombra inferior extremamente longa; forte rejeição de preços. |
 
----
+### 🔴 Padrões Baixistas (Bearish)
 
-<details>
-<summary>🟢 <b>Descrição: Padrões Altistas (Bullish)</b></summary>
+| Chave (Key) | Nome do Padrão | Explicação Breve |
+| :--- | :--- | :--- |
+| `SHOOTINGSTAR` | Estrela Cadente | Reversão de baixa; corpo pequeno no fundo e sombra superior longa. |
+| `HANGINGMAN` | Enforcado | Forma de martelo no topo de uma tendência, indicando reversão para baixa. |
+| `EVENINGSTAR` | Evening Star | Reversão de baixa em três candles no topo de uma tendência de alta. |
+| `EVENINGDOJISTAR` | Evening Doji Star | Variante do Evening Star onde o candle central é um Doji. |
+| `DARKCLOUDCOVER` | Nuvem Negra | Candle de baixa que abre acima da máxima e fecha fundo no corpo do anterior. |
+| `THREEBLACKCROWS` | Três Corvos Negros | Três candles longos de baixa em sequência, indicando tendência forte de queda. |
+| `TWOCROWS` | Dois Corvos | Dois candles de baixa após um longo candle de alta, com gap entre eles. |
+| `UPSIDEGAPTWOCROWS`| Upside Gap Two Crows | Padrão de reversão que se forma após um gap de alta em tendência de subida. |
+| `ADVANCEBLOCK` | Advance Block | Reversão de baixa; candles de alta com corpos decrescentes e sombras longas. |
+| `IDENTICALTHREECROWS`| Corvos Idênticos | Variante dos três corvos onde as aberturas coincidem com os fechos. |
+| `GRAVESTONEDOJI` | Doji Lápide | Doji de reversão de baixa; corpo na mínima com sombra superior longa. |
+| `ONNECK` | On-Neck Pattern | Continuidade de baixa; candle de alta que fecha na mínima do candle anterior. |
+| `INNECK` | In-Neck Pattern | Continuidade; similar ao On-Neck, mas fecha levemente dentro do corpo anterior. |
+| `THREELINESTRIKE` | Three-Line Strike | Padrão de 4 candles onde três de alta são "atropelados" por um grande de baixa. |
+| `THRUSTING` | Thrusting Pattern | Continuidade de baixa; candle de alta que fecha abaixo do meio do candle anterior. |
+| `STALLEDPATTERN` | Stalled Pattern | Reversão de baixa indicando perda de momentum em tendência de alta. |
+| `UPSIDEDOWNSIDEGAP` | Gap 3 Methods | Continuidade; gap seguido por um candle de cor oposta que preenche o gap. |
 
-- **Reversão**: `Hammer`, `Inverted Hammer`, `Morning Star`, `Morning Doji Star`, `Piercing Pattern`, `Three White Soldiers`, `Three Inside Up`, `Three Outside Up`, `Abandoned Baby`, `Unique 3 River`, `Ladder Bottom`, `Matching Low`.
-- **Continuidade**: `Mat Hold`, `Rising Three Methods`, `Separating Lines`, `Tasuki Gap`, `Belt-hold`, `Homing Pigeon`.
-</details>
+### ⚪ Indecisão e Estrutura
 
-<details>
-<summary>🔴 <b>Descrição: Padrões Baixistas (Bearish)</b></summary>
-
-- **Reversão**: `Shooting Star`, `Hanging Man`, `Evening Star`, `Evening Doji Star`, `Dark Cloud Cover`, `Three Black Crows`, `Two Crows`, `Upside Gap Two Crows`, `Advance Block`, `Identical Three Crows`, `Gravestone Doji`.
-- **Continuidade**: `On-Neck Pattern`, `In-Neck Pattern`, `Falling Three Methods`, `Three-Line Strike`, `Upside/Downside Gap Three Methods`.
-</details>
-
-<details>
-<summary>⚪ <b>Descrição: Padrões de Indecisão e Estrutura</b></summary>
-
-- **Indecisão**: `Doji`, `Long Legged Doji`, `Rickshaw Man`, `Spinning Top`, `High-Wave Candle`.
-- **Força**: `Marubozu`, `Closing Marubozu`, `Long Line`, `Short Line`.
-- **Outros**: `Hikkake`, `Hikkake Modified`, `Kicking`, `Stick Sandwich`, `Counterattack`, `Breakaway`.
-</details>
+| Chave (Key) | Nome do Padrão | Explicação Breve |
+| :--- | :--- | :--- |
+| `DOJI` | Doji | Indecisão total do mercado; preços de abertura e fechamento iguais. |
+| `LONGLEGGEDDOJI` | Doji de Pernas Longas | Alta indecisão; sombras longas para ambos os lados e corpo nulo. |
+| `RICKSHAWMAN` | Rickshaw Man | Doji onde a abertura e fecho estão no centro exato do range do candle. |
+| `SPINNINGTOP` | Pião (Spinning Top) | Indecisão; corpo real pequeno com sombras superior e inferior longas. |
+| `HIGHWAVE` | High-Wave Candle | Indecisão extrema; sombras muito longas e corpo real minúsculo. |
+| `MARUBOZU` | Marubozu | Força extrema; candle com sombras nulas ou mínimas em ambas as extremidades. |
+| `CLOSINGMARUBOZU` | Closing Marubozu | Força; Marubozu onde o fecho coincide com a máxima ou mínima da barra. |
+| `LONGLINE` | Long Line | Momentum forte; corpo real muito longo em relação às sombras. |
+| `SHORTLINE` | Short Line | Perda de momentum; corpo real muito curto em relação às sombras. |
+| `TRISTAR` | Tristar Pattern | Padrão de reversão raro composto por três Dojis consecutivos. |
+| `HIKKAKE` | Hikkake Pattern | Usado para identificar falsos rompimentos (Bullish/Bearish). |
+| `HIKKAKEMOD` | Hikkake Modificado | Variante avançada do Hikkake com critérios de confirmação adicionais. |
+| `STICKSANDWICH` | Stick Sandwich | Reversão; dois candles com fechos iguais "ensanduichando" um oposto. |
+| `BREAKAWAY` | Breakaway | Padrão de 5 candles que indica reversão após o rompimento de uma micro-tendência. |
+| `COUNTERATTACK` | Contra-Ataque | Reversão; dois candles opostos que terminam com o mesmo preço de fechamento. |
 
 ---
 
@@ -140,12 +175,15 @@ O projeto é totalmente compatível com **Plotly**, permitindo a geração de gr
 
 ```text
 price-action-engine/
+├── files/                  # Diretório de dados
+│   └── prices.csv          # Dados de exemplo (OHLCV)
 ├── technical_analysis/     # Core da biblioteca
 │   ├── price_action.py     # Lógica de padrões e estrutura
 │   ├── indicators.py       # Indicadores técnicos matemáticos
 │   └── __init__.py         # Exportação de módulos
 ├── examples.py             # Scripts de demonstração
-├── prices.csv              # Dados de exemplo (OHLCV)
+├── requirements.txt        # Dependências do projeto
+├── LICENSE                 # Licença MIT
 └── README.md               # Documentação principal
 ```
 
