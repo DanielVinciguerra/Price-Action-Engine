@@ -34,10 +34,10 @@ Certifique-se de ter o Python 3.8+ instalado.
 
 ```bash
 # Clone o repositório
-git clone https://github.com/DanielVinciguerra/technical-analysis.git
+git clone https://github.com/DanielVinciguerra/Price-Action-Engine.git
 
 # Instale as dependências
-pip install pandas numpy scipy plotly
+pip install -r requirements.txt
 ```
 
 ---
